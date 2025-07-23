@@ -1,13 +1,15 @@
 import React from 'react'
+import NavBar from '../components/NavBar'
+import Header from '../components/Header'
+import Tools from '../components/Tools'
 
 const Home = () => {
   return (
-    <div>
-        <h1>Home</h1>
-        {
-            console.log("Home")
-        }
-    </div>
+    <>
+       <NavBar /> 
+       <Header />
+       <Tools />
+    </>
   )
 }
 
