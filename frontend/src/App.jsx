@@ -1,6 +1,6 @@
 import Layout from './pages/Layout'
 import Home  from './pages/Home'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import BlogTitles from './pages/BlogTitles'
@@ -9,8 +9,16 @@ import GenerateImages from './pages/GenerateImages'
 import RemoveBackground from './pages/RemoveBackground'
 import RemoveObject from './pages/RemoveObject'
 import ReviewResume from './pages/ReviewResume'
+import { useAuth } from '@clerk/clerk-react'
+
 
 const App = () => {
+
+  const {getToken} = useAuth()
+  useEffect(() => {
+    getToken().then((token) => console.log(token))
+  }, [])
+
   return (
     <div>
       <Routes>
